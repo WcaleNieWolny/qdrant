@@ -60,12 +60,12 @@ jobs:
 
   test-windows:
 
-    runs-on: windows-latest
+    runs-on: self-hosted
     
     steps:
+      - uses: actions/checkout@v3
       - name: Install minimal stable
         uses: dtolnay/rust-toolchain@stable
-      - uses: actions/checkout@v3
       - uses: Swatinem/rust-cache@v2
       - name: Install Protoc
         uses: arduino/setup-protoc@v1
