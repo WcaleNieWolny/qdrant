@@ -60,7 +60,7 @@ jobs:
 
   test-windows:
 
-    runs-on: self-hosted
+    runs-on: windows-latets
     
     steps:
       - uses: actions/checkout@v3
