@@ -60,7 +60,7 @@ jobs:
 
   test-windows:
 
-    runs-on: self-hosted
+    runs-on: windows-latest
     
     steps:
       - name: Install minimal stable
@@ -71,6 +71,8 @@ jobs:
         uses: arduino/setup-protoc@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
       - name: Build
         run: cargo build --features service_debug
       - name: Set up Python
