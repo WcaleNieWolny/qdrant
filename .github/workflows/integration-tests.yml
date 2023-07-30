@@ -60,7 +60,7 @@ jobs:
 
   test-windows:
 
-    runs-on: windows-latets
+    runs-on: windows-latest
     
     steps:
       - uses: actions/checkout@v3
