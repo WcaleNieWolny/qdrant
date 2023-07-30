@@ -60,7 +60,7 @@ jobs:
 
   test-windows:
 
-    runs-on: windows-latest
+    runs-on: self-hosted
     
     steps:
       - name: Install minimal stable
