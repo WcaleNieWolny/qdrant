@@ -48,7 +48,7 @@ done
 echo "server ready to serve traffic"
 
 # Wait for the peer to establish the leader and commit initial settings
-if [ $MODE == "distributed" ]; then
+if [ "$MODE" == "distributed" ]; then
   sleep 10
 fi
 
