@@ -70,7 +70,7 @@ jobs:
       - name: docker test
         shell: pwsh
         run: |
-          .\DockerCli.exe
+          & 'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchLinuxEngine
       - name: Install minimal stable
         uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
