@@ -67,10 +67,15 @@ jobs:
     
     steps:
       - uses: actions/checkout@v3
-      - name: docker test
-        shell: pwsh
-        run: |
-          & 'C:\Program Files\Docker\Docker\DockerCli.exe' -SwitchLinuxEngine
+      - uses: actions/setup-go@v4
+        with:
+          go-version: '>=1.17.0'
+      - name: Install grpcurl
+        shell: bash
+        run: go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
+      - name: test
+        shell: bash
+        run: grpcurl --help
       - name: Install minimal stable
         uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
