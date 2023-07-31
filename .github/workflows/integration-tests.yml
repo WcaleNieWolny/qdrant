@@ -18,6 +18,12 @@ jobs:
       - name: Install minimal stable
         uses: dtolnay/rust-toolchain@stable 
       - uses: actions/checkout@v3
+      - uses: actions/setup-go@v4
+        with:
+          go-version: '>=1.17.0'
+      - name: Install grpcurl
+        shell: bash
+        run: go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
       - uses: Swatinem/rust-cache@v2
       - uses: actions/setup-python@v4
         with:
@@ -37,6 +43,12 @@ jobs:
       - name: Install minimal stable
         uses: dtolnay/rust-toolchain@stable 
       - uses: actions/checkout@v3
+      - uses: actions/setup-go@v4
+        with:
+          go-version: '>=1.17.0'
+      - name: Install grpcurl
+        shell: bash
+        run: go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
       - uses: Swatinem/rust-cache@v2
       - name: Install dependencies
         run: sudo apt-get install clang protobuf-compiler
@@ -73,9 +85,6 @@ jobs:
       - name: Install grpcurl
         shell: bash
         run: go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
-      - name: test
-        shell: bash
-        run: grpcurl --help
       - name: Install minimal stable
         uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
