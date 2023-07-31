@@ -71,7 +71,6 @@ jobs:
         shell: pwsh
         run: |
           .\DockerCli.exe
-        run: 
       - name: Install minimal stable
         uses: dtolnay/rust-toolchain@stable
       - uses: Swatinem/rust-cache@v2
